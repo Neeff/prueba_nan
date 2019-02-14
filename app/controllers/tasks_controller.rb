@@ -1,7 +1,7 @@
 class TasksController < ApplicationController 
   def index
-     #@task_user = User.find_by(:id )
      @tasks = Task.all
+     @task = UserTask.where(completed: true)
   end
 
   def show
