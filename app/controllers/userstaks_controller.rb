@@ -10,7 +10,7 @@ class UserstaksController < ApplicationController
 
         def delete
           @task = Task.find(params[:id])
-          @task.users.delete(User.find(current_user.id))
+          @task.users.delete(User.find(params[:user_id]))
           redirect_to root_path
         end 
 end
